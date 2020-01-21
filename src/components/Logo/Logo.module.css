@@ -1,0 +1,17 @@
+/*
+ * Maximilian prefers to define the logo just on its own (i.e.
+ * 100% width and so on), and control the 'perfect fit' in the
+ * upper component (for desktop or mobile; in the Toolbar or
+ * the SideDrawer respectively).
+ */
+.Logo {
+    background-color: white;
+    padding: 8px;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.Logo img {
+    height: 100%;
+}

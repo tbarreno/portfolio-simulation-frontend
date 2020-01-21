@@ -1,0 +1,23 @@
+/*
+ * Mobile first.
+ */
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    /* Mobile: vertical menu */
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+
+/*
+ * Adaptation for wide browsers
+ */
+@media(min-width: 500px) {
+    .NavigationItems {
+        /* Navigation items must be in row when there's available space */
+        flex-flow: row;
+    }
+}

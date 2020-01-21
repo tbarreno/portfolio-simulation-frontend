@@ -1,33 +1,65 @@
 import React from 'react';
-
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/core/Menu';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import styles from './Layout.css';
+import Empty from '../../hoc/Empty/Empty';
+import cssClasses from './Layout.module.css';
+import Toolbar from '../navigation/Toolbar/Toolbar';
+import SideDrawer from '../navigation/SideDrawer/SideDrawer';
 
 /**
- * Main application layout.
+ * The Layout component.
  * 
- * This component structures the application: sets the navigation bar
- * on the top and the content on the center of the screen.
+ * This component was originaly stateless, but we switch into a stateful
+ * one as we want to control the side menu show/hide property by clicking
+ * the toolbar "show menu" button, or the backdrop component when the
+ * menu is shown (we simply close the menu again).
+ * 
  */
-const layout = (props) => {
-    return (
-        <AppBar position="static">
-            <Toolbar>
-                <IconButton edge="start" className={styles.menuButton} color="inherit" aria-label="menu">
-                    <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" className={styles.title}>
-                    News
-                </Typography>
-                <Button color="inherit">Login</Button>
-            </Toolbar>
-        </AppBar>
-    );
+class Layout extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            showSideDrawer: false
+        }
+    }
+
+    /**
+     * The handler for closing the side menu (SideDrawer).
+     */
+    sideDrawerClosedHandler = () => {
+        this.setState({ showSideDrawer: false });
+    };
+
+    /**
+     * The toggler for the side menu.
+     * 
+     * This function pass a function to the 'setstate' in order to
+     * use the previous state (due to syncs).
+     */
+    sideDrawerToggler = () => {
+        this.setState( (prevState) => {
+            return { showSideDrawer: ! prevState.showSideDrawer }
+        });
+    };
+
+
+    /**
+     * Render the component.
+     */
+    render() {
+        return (
+            <Empty>
+                <Toolbar open={this.state.showSideDrawer} onMenuToggle={this.sideDrawerToggler} />
+                <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler} />
+                <div className={cssClasses.Header}>SideDrawer, Backdrop.</div>
+                <main className={cssClasses.Content}>
+                    {this.props.children}
+                </main>
+            </Empty>
+        );
+    }
 }
 
-export default layout;
+/**
+ * Export
+ */
+export default Layout;

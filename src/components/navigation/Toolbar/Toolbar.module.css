@@ -1,0 +1,46 @@
+/*
+ * The Toolbar is present in both desktop and mobile browsers.
+ */
+.Toolbar {
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: indigo;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.4);
+}
+
+.Toolbar nav {
+    height: 100%;
+    
+}
+
+/* Logo adjustment */
+.Logo {
+    height: 80%;
+}
+
+/*
+ * Media query for hiding the toolbar menu for mobile devices
+ */
+@media(max-width: 499px) {
+    .DesktopOnly {
+        display: none;
+    }
+}
+
+/*
+ * A media query for showing the hamburger menu on narrow screens.
+ */
+@media(min-width: 500px) {
+    .MobileOnly {
+        display: none;
+    }
+}

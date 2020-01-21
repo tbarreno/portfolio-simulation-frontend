@@ -1,0 +1,28 @@
+/*
+ * Estilo del sumario: todo centrado en un 80% del ancho.
+ */
+.CheckoutSummary {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+/*
+ * Media Query para que cuando el tamaño sea menor de 600px, no se
+ * achique más el sumario (que se quede ya con un tamaño fijo).
+ */
+@media (min-width: 600px) {
+    .CheckoutSummary {
+        width: 500px;
+    }
+}
+
+/*
+ * Estilo particular para la previsualización de la hamburguesa.
+ * Max lo hace en el tutorial como 'in-line style', pero he preferido
+ * sacarlo al CSS; me parece más bonito.
+ */
+.BurgerPreview {
+    width: 100%;
+    margin: 'auto';
+}

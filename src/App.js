@@ -1,23 +1,34 @@
 import React from 'react';
+import { Route, BrowserRouter } from 'react-router-dom';
 
-import Button from '@material-ui/core/Button';
-import Layout from './components/Layout/Layout';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import Home from './containers/Home/Home';
+import Datasets from './containers/Datasets/Dataset';
+import Portfolio from './containers/Portfolio/Portfolio';
 
 /**
  * Root component for the application.
+ * 
  */
-function App() {
-  return (
-    <div className="App">
-      <Layout>
-        <Button variant="contained" color="primary">
-          Start the application
-      </Button>
-        <p>This is the main view.</p>
-      </Layout>
-    </div>
-  );
+class App extends React.Component {
+
+  /**
+   * Rendering.
+   */
+  render() {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Layout>
+            <Route path="/" exact component={Home} />
+            <Route path="/datasets" component={Datasets} />
+            <Route path="/portfolio" component={Portfolio} />
+          </Layout>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,38 @@
+.SideDrawer {
+    /* Always on the screen */
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* Over the page */
+    z-index: 200;
+    background-color: white;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+
+/* This media is for wider devices: we hide the SideDrawer */
+@media(min-width: 500px) {
+    .SideDrawer {
+        display: none;
+    }
+}
+
+/* Conditional classes (for animations) */
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+/* Logo adjustment */
+.Logo {
+    height: 11%;
+    /* Small gap between the logo and the menu entries */
+    margin-bottom: 32px;
+}

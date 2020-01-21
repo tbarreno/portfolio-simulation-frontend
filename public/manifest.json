@@ -1,6 +1,6 @@
 {
-  "short_name": "StFrontend",
-  "name": "StockExampleFrontend",
+  "short_name": "PortfolioSim",
+  "name": "Portfolio Simulation Frontend",
   "icons": [
     {
       "src": "favicon.ico",

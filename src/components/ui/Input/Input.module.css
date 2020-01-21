@@ -1,0 +1,40 @@
+.Input {
+    width: 95%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Label {
+    font-weight: bold;
+    font-size: smaller;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+    padding-left: 6px;
+}
+
+.InputElement {
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+}
+
+/*
+ * Cuando seleccionamos la entrada, la cambiamos de color para destacarla.
+ */
+.InputElement:focus {
+    outline: none;
+    background-color: #ccc;
+}
+
+/*
+ * Método para mostrar un campo que no ha pasado la validación
+ */
+.Invalid {
+    border: 1px solid red;
+    background-color: lightcoral;
+}

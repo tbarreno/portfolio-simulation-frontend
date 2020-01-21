@@ -1,0 +1,16 @@
+.Dataset {
+    width: 60%;
+    max-width: 480px;
+    border: 1px solid #bbb;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.Dataset span {
+    text-transform: capitalize;
+    display: inline-block;
+    margin: 0 8px;
+    border: 1px;
+}
