@@ -41,4 +41,5 @@ The Docker container will be build with:
 
 ```sh
 docker image build -t portfolio_simulator_fe:1.0 .
+
 ```
